@@ -47,7 +47,7 @@ All commands are run from the root of the project, from a terminal:
 
 # Docker
 
-Before to run this code using docker, it is necessary create the dist. So before to use docker, it required execute:
+Before to run this code using docker, it is necessary create the dist. So before to use docker, it is required execute:
 
 ```bash
 npm run build
