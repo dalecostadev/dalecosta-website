@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/Default.astro';
+import CodeCopy from '@components/misc/CodeCopy.astro';
+---
+
+<Layout title="Donate | Dalecosta" description="My donation links and crypto addresses.">
+    <!-- Title -->
+    <h1 class="text-5xl font-bold mb-6">Donate</h1>
+
+    <!-- Platform -->
+    <h2 class="text-2xl font-bold mb-3">Platform</h2>
+    <p><a href="https://github.com/sponsors/dalecostadev">GitHub Sponsors</a></p>
+    <p><a href="https://www.buymeacoffee.com/dalecostadev">Buy Me a Book</a></p>
+
+    <!-- Crypto -->
+    <h2 class="text-2xl font-bold mt-3 mb-3">Crypto</h2>
+    <p>Bitcoin: <CodeCopy text="bc1qu0y7tet27p2gaqcgf08d7863x50j9tp3g7zfhwcswexmwtqzmg9sfz8vlf" /></p>
+    <p>Ethereum/Polygon: <CodeCopy text="0xa9E8129ffa952f5F1f31549baeE16928BB5e4353" /></p>
+    <p>Solana: <CodeCopy text="77GuxtLpWToWbrc2GvSN12iwjB2VMBmb6tDoHYYHJmEs" /></p>
+</Layout>

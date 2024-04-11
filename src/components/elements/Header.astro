@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<header class="mb-8">
+  <div class="flex items-center justify-between md:justify-start relative">
+    <a href="/" class="flex-shrink-0">
+      <Image width="125" height="125" src="/favicon.png" alt="Icon" class="w-20 h-20 md:w-32 md:h-32" />
+    </a>
+    <div class="hidden md:block md:flex-grow">
+      <nav id="navMenu" class="hidden md:flex justify-end items-center bg-transparent z-40">
+        <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4" href="/" rel="noopener noreferrer">Home</a>
+        <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4" href="/blog/about-me" rel="noopener noreferrer">About me</a>
+        <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4" href="/donate" rel="noopener noreferrer">Donate</a>
+      </nav>
+    </div>
+    <button id="menuToggle" class="md:hidden px-2 py-1 text-xl">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+  </div>
+  <!-- Mobile Navigation -->
+  <nav id="mobileNavMenu" class="hidden absolute left-0 w-full bg-blue-900 dark:bg-gray-800 z-40 mt-4 md:hidden">
+    <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4 block text-center" href="/" rel="noopener noreferrer">Home</a>
+    <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4 block text-center" href="/blog/about-me" rel="noopener noreferrer">About me</a>
+    <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out hover:text-blue-700 dark:hover:text-blue-400 py-2 px-4 block text-center" href="/donate" rel="noopener noreferrer">Donate</a>
+  </nav>  
+</header>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+      const path = link.getAttribute('href');
+      link.href = `${window.location.origin}${path}`;
+    });
+  });
+
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    const mobileNavMenu = document.getElementById('mobileNavMenu');
+    mobileNavMenu.classList.toggle('hidden');
+  });
+</script>

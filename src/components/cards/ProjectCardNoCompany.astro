@@ -1,0 +1,17 @@
+---
+interface Props {
+    id: string;
+    title: string;
+    description: string;
+}
+const { id, title, description } = Astro.props;
+---
+
+<div id={`component_${id}`} class="project-card bg-gray-300 dark:bg-gray-800 p-3 rounded-md shadow mb-4">
+    <h4 class="font-semibold text-lg mb-2">
+        {title}
+    </h4>
+    <p class="text-sm sm:text-base">
+        {description}
+    </p>
+</div>

@@ -1,0 +1,46 @@
+---
+import Time from '@components/misc/Time';
+import SocialIcon from '@components/icons/SocialIcon.astro';
+
+import { Icon } from 'astro-icon/components';
+---
+
+<script>
+	// Weather
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Rome&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data = await res.json();
+	const temp_f = data.main.temp;
+
+	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Rome&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data2 = await res2.json();
+	const temp_c = data2.main.temp;
+
+	const weather_element = document.getElementById(`weather`);
+	if (weather_element) {
+		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_f)}°C`;
+
+		weather_element.addEventListener('mouseover', () => {
+			weather_element.innerHTML = `${Math.round(temp_c)}°F`;
+		});
+
+		weather_element.addEventListener('mouseout', () => {
+			weather_element.innerHTML = `${Math.round(temp_f)}°C`;
+		});
+	}
+</script>
+
+<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#a9ff6c] dark:from-blue-300 dark:to-[#a9ff6c] animate-[gradient_3s_ease-in-out_infinite] clip">Nicol&ograve; Costantini</span></h1>
+<h1>DevOps Engineer from Italy</h1>
+<br>
+<span class="font-normal mb-2 text-2xl block"><span id="weather" class="font-medium">Loading weather</span> in Rome</span>
+<span class="font-normal mb-4 text-xl flex gap-1 fill-gray-800 dark:fill-white"><Icon name="mdi:clock" class="h-6 w-6" /> <Time client:only="react" /></span>
+<div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
+	<SocialIcon name="Github" href="https://github.com/dalecostadev" icon="mdi:github" />
+	<SocialIcon name="Linkedin" href="https://www.linkedin.com/in/nicol%C3%B2-costantini-a52602181" icon="mdi:linkedin" />	
+	<SocialIcon name="Youtube" href="https://www.youtube.com/@dalecostadev" icon="mdi:youtube" />	
+	<SocialIcon name="Instagram" href="https://www.instagram.com/dalecostadev" icon="mdi:instagram" />
+	<a href="https://www.tiktok.com/@dalecostadev">
+		<img src="/social/tiktok.png" alt="TikTok" style="filter: brightness(1.2);" />
+	</a>    
+    <SocialIcon name="Email" href="mailto:dalecostadev@protonmail.com" icon="mdi:email" />
+</div>

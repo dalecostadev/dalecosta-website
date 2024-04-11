@@ -1,0 +1,40 @@
+---
+import ProjectCard from '@components/cards/ProjectCard.astro';
+import ProjectCardNoCompany from '@components/cards/ProjectCardNoCompany.astro';
+---
+
+<h3 class="font-medium mt-12">Work Experience</h3>
+<p class="mb-4">This overview encapsulates my hands-on experience in software engineering, illustrating a dedicated and ever-evolving journey within the tech industry.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <ProjectCard 
+        title="Software Engineer (2017-2022)"
+        companyName="Solveit"
+        companyUrl="https://www.solve.it/?lang=en"
+        description="My journey began at Solveit, where I embraced the role of a back-end engineer. Diving into the world of desktop application development. I harnessed the power of .NET, grounding my skills in Object-Oriented Programming (OOP). As the years unfolded, my quest for knowledge led me to explore new languages, technologies and methodologies significantly enhancing my expertise. I ventured into designing event-driven architectures with Kafka and developing robust API back-end services. This period marked my foray into the DevOps and automation sphere, where I mastered Docker and Kubernetes. Applying these skills, I revolutionized our software release process, optimizing pipeline and branch management strategies on Azure DevOps, thereby elevating the software engineering department's productivity and efficiency."
+        id="1"
+    />
+    
+    <ProjectCard 
+        title="Team Leader (2022-2023)"
+        companyName="Avanade"
+        companyUrl="https://www.avanade.com/en-nl"
+        description="At Avanade, I worked within the DevOps engineering department and served as a team leader on two key projects for italian governmental entities. My responsibilities included creating Azure infrastructure using Terraform, helping the team to develop back-end services with Azure Functions and .NET managing the git repositories using Azure Pipelines for automations and deployment. With the managers, we led a fully remote team throughout Italy. We used to implement agile methodologies and utilized Gantt charts for effective project management and scheduling of the activities. Maintaining continuous communication between us, we ensured our efforts were aligned with project milestones and client need."
+        id="2"
+    />
+    
+    <ProjectCard 
+        title="DevOps Engineer (2023-Now)"
+        companyName="Aruba"
+        companyUrl="https://www.aruba.it/en/home.aspx"
+        description="My fascination with the DevOps inspired a full transition from software engineering to a dedicated DevOps role. This shift required reevaluating operational methodologies, diving deep into the essence of DevOps. I'm embarking on a specialization journey, focusing on kubernetes, ArgoCD, Helm, docker, pipeline CI/CD, automations and the development of custom microservices tailored for cloud automation and process optimization. The mission, as DevOps Engineer, is to support the software engineering teams throughout the software release process, introducing smarter and more automated methodologies to enhance efficiency and effectiveness."
+        id="3"
+    />
+    
+    <ProjectCard
+        title="Just For Fun (2012-Now)"
+        companyName="About me"
+        companyUrl="blog/about-me"
+        description="In 2012, my foray into computer science began with simple curiosity about tech systems. What was a childhood fascination has grown into my career as a software and DevOps engineer. I'm passionate about engaging in hackathons, advancing open-source projects and empowering startups with foundational tech architecture. Continually honing my skills in cloud, DevOps, and backend development, I dedicate myself to improving software quality and operational efficiency. My commitment to lifelong learning and technical excellence is the cornerstone of my professional ethos. If you are interested in finding out more my experience, you can visit the about me section."
+        id="4"    
+    />
+</div>
